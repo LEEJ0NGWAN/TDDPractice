@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.example.tdd.database.PointHistoryTable;
 import com.example.tdd.database.UserPointTable;
 
 @DisplayName("유저 포인트 조회기능 테스트")
@@ -18,9 +19,12 @@ public class GetPointTest {
     @BeforeEach
     public void beforeEach() {
 
-        // create new components
+        // dummy
+        final PointHistoryTable pointHistoryTable = null;
+        final PointProperties pointProperties = null;
+
         userPointTable = new UserPointTable();
-        pointService = new PointService(userPointTable, null);
+        pointService = new PointService(userPointTable, pointHistoryTable, pointProperties);
     }
 
     @AfterEach

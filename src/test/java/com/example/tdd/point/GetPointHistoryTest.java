@@ -14,6 +14,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.example.tdd.database.PointHistoryTable;
+import com.example.tdd.database.UserPointTable;
 
 @DisplayName("포인트 충전/사용 내역 조회 테스트")
 public class GetPointHistoryTest {
@@ -24,9 +25,12 @@ public class GetPointHistoryTest {
     @BeforeEach
     public void beforeEach() {
 
-        // initialize components
+        // dummy
+        final UserPointTable userPointTable = null;
+        final PointProperties pointProperties = null;
+
         pointHistoryTable = new PointHistoryTable();
-        pointService = new PointService(null, pointHistoryTable);
+        pointService = new PointService(userPointTable, pointHistoryTable, pointProperties);
     }
 
     @AfterEach
