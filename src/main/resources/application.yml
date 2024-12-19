@@ -1,2 +1,6 @@
 spring:
   application.name: hhplus-tdd
+
+point:
+  maximum-amount: 100000
+  maximum-update-try-count: 5
